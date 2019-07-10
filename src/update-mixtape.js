@@ -1,21 +1,11 @@
-class UpdateOperation {
-  static addSong() {
-    console.log('going to addSong');
-  }
+const { UpdateOperation } = require('./update-operation');
 
-  static addPlaylist() {
-    console.log('going to addPlaylist');
-  }
-
-  static removePlaylist() {
-    console.log('going to removePlaylist');
-  }
-}
+const ROOT_PATH = '../';
 
 // TODO: fix the require
 function updateMixtape(input, changes, output) {
-  let { users, songs, playlists } = require('./' + input);
-  let updates = require('./' + changes);
+  let { users, songs, playlists } = require(ROOT_PATH + input);
+  let updates = require(ROOT_PATH + changes);
   
   console.log('updating mixtape', users, songs, playlists, updates);
   let i = 0;
