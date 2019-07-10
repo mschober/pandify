@@ -1,9 +1,16 @@
 class UpdateOperation {
-  static addSong(songs, playlists, change) {
+  static addSong(playlists, change) {
     console.log('going to addSong');
+    let playlist = playlists.filter(pl => {
+      console.log('pl is', pl, change);
+      return pl.id === change.playlistId;
+    })[0];
+    
+    playlist.songs.push(change.songId);
+    console.log('found pl is', playlist);
   }
 
-  static addPlaylist(users, playlists, change) {
+  static addPlaylist(user, change) {
     console.log('going to addPlaylist');
   }
 

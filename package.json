@@ -12,7 +12,10 @@
     "mocha": "^6.1.4"
   },
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "test-regex": "mocha --recursive -g --",
+    "debug-test": "mocha --recursive",
+    "debug-test:regex": "npm run debug-test -- -g"
   },
   "author": "",
   "license": "ISC"
