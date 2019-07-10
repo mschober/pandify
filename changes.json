@@ -1,0 +1,18 @@
+[
+  {
+    "operation": "ADD_SONG",
+    "songId": "abc123",
+    "playlistId": "xyz987"
+  },
+  {
+    "operation": "ADD_PLAYLIST",
+    "userId": "lmn567",
+    "songs": [
+      "abc123"
+    ]
+  },
+  {
+    "operation": "REMOVE_PLAYLIST",
+    "playlistId": "wer234"
+  }
+]

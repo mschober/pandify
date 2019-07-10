@@ -1,0 +1,27 @@
+#!/usr/local/bin/node
+let { updateMixtape } = require('./update-mixtape');
+
+let [ input, changes, output ] = process.argv.slice(2);
+
+function validateCommandArgs(input, changes, output) {
+  let helpString = `
+./pandify <input-file> <changes-file> <output-file>
+`;
+  if (!input || !changes || !output) {
+    throw new Error(helpString);
+  }
+}
+
+function applyChanges(input, changes, output) {
+  validateCommandArgs(input, changes, output);
+  console.log('starting changes for', input, changes, output);
+  updateMixtape(input, changes, output);
+  console.log('applied!');
+}
+
+try {
+  applyChanges(input, changes, output);
+}
+catch (err) {
+  console.log('failed', err.toString());
+}
