@@ -1,0 +1,19 @@
+{
+  "name": "pandify",
+  "version": "1.0.0",
+  "description": "Updates users playlists with songs.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  },
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "author": "",
+  "license": "ISC"
+}
