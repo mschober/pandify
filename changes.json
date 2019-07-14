@@ -14,9 +14,5 @@
   {
     "operation": "REMOVE_PLAYLIST",
     "playlistId": "wer234"
-  },
-  {
-    "operation": "REMOVE_PLAYLIST",
-    "playlistId": "asd456"
   }
 ]

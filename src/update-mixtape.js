@@ -1,5 +1,5 @@
 const { UpdateOperation } = require('./update-operation');
-
+const fs = require('fs');
 const ROOT_PATH = '../';
 
 // TODO: fix the require
@@ -25,6 +25,11 @@ function updateMixtape(input, changes, output) {
     }
     i++;
   }
+  let toWrite = JSON.stringify({
+    users, songs, playlists
+  });
+  console.log('DEBUG: results', toWrite);
+  fs.writeFileSync(output, toWrite);
 }
 
 

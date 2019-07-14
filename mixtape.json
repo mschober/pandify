@@ -1,15 +1,28 @@
 {
   "users": {
-    "userab123": {
-
+    "userab123": {},
+    "lmn567": {
+      "id": "lmn567",
+      "playlists": {}
     }
   },
   "songs": {
     "songab123": {
 
+    },
+    "abc123": {
+      "id": "abc123"
     }
   },
   "playlists": {
-    "playlistab123": {}
+    "playlistab123": {},
+    "xyz987": {
+      "id": "xyz987",
+      "songs": {}
+    },
+    "wer234": {
+      "id": "wer234",
+      "songs": {}
+    }
   }
 }

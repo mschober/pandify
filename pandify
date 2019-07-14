@@ -8,7 +8,7 @@ function validateCommandArgs(input, changes, output) {
 ./pandify <input-file> <changes-file> <output-file>
 `;
   if (!input || !changes || !output) {
-    throw new Error(helpString);
+    throw new Error(helpString + JSON.stringify([input, changes, output]));
   }
 }
 
