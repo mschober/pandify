@@ -12,6 +12,20 @@ class UpdateOperation {
 
   static addPlaylist(user, change) {
     console.log('going to addPlaylist');
+    // create playlist (change)
+    let songs = change.songs;
+    let userId = change.userId;
+    let newPlaylist = {
+      playlistId: 'pl123',
+      songs: songs
+    }
+    // addPlaylist to user (playlist)
+    if (user.playlists) {
+      user.playlists.push(newPlaylist);
+    }
+    else {
+      user.playlists = [newPlaylist]
+    }
   }
 
   static removePlaylist(users, playlists, change) {
