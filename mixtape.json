@@ -1,5 +1,15 @@
 {
-  "users": [],
-  "songs": [],
-  "playlists": []
+  "users": {
+    "userab123": {
+
+    }
+  },
+  "songs": {
+    "songab123": {
+
+    }
+  },
+  "playlists": {
+    "playlistab123": {}
+  }
 }

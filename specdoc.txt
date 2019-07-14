@@ -56,6 +56,7 @@ Thanks again for your time and we look forward to receiving your reply.
 The Highspot Engineering Team
 
 Lets assume:
+1. Removing a playlist should remove all it's references from existing users.
 
 
 Questions:

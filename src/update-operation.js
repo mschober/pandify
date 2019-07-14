@@ -1,13 +1,14 @@
 class UpdateOperation {
   static addSong(playlists, change) {
-    console.log('going to addSong');
-    let playlist = playlists.filter(pl => {
-      console.log('pl is', pl, change);
-      return pl.id === change.playlistId;
-    })[0];
-    
-    playlist.songs.push(change.songId);
-    console.log('found pl is', playlist);
+    // console.log('DEBUG: going to addSong');
+    // find playlist
+    let playlist = playlists[change.playlistId];
+
+    // add song to playlist
+    playlist.songs[change.songId] = {
+      id: change.songId
+    };
+    // console.log('DEBUG: found pl is', playlist);
   }
 
   static addPlaylist(users, playlists, change) {
@@ -17,25 +18,40 @@ class UpdateOperation {
     let userId = change.userId;
     let newPlaylist = {
       id: 'plab456',
-      songs: songs
+      songs: songs,
+      users: [userId]
     }
     // add playlist to playlists
-    playlists.push(newPlaylist);
+    playlists[newPlaylist.id] = newPlaylist;
     // find user
-    let user = users.filter(u => u.id === userId)[0]; // should be unique
+    let user = users[userId];
 
     // addPlaylist to user (playlist)
     if (user.playlists) {
-      user.playlists.push(newPlaylist);
+      user.playlists[newPlaylist.id] = newPlaylist;
     }
     else {
-      user.playlists = [newPlaylist]
+      user.playlists = {};
+      user.playlists[newPlaylist.id] = newPlaylist;
     }
-
+    return newPlaylist.id;
   }
 
   static removePlaylist(users, playlists, change) {
-    console.log('going to removePlaylist');
+    console.log('DEBUG: going to removePlaylist');
+    let playlistId = change.playlistId;
+
+    // get the playlist
+    let playlist = playlists[playlistId];
+
+    // remove playlist from playlists
+    delete playlists[playlist];
+
+    // remove references to playlist from existing users
+    let updateUsers = playlist.users;
+    updateUsers.forEach(user => {
+      delete user.playlists[playlistId];
+    });
   }
 }
 
