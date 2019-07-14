@@ -140,4 +140,76 @@ describe('update operation tests', () => {
     assert.deepEqual(playlists[newPlaylistId].songs, change.songs);
     // console.log('DEBUG:', playlists, user);
   });
+
+  it('should remove a playlist when no users reference it', () => {
+    let users = {
+      'userab123': { 
+        id: 'userab123',
+        playlists: {}
+      }
+    };
+
+    let playlists = {
+      'plab123': { 
+        id: 'plab123',
+        users: {}
+      }
+    };
+
+    let change = {
+      operation: "REMOVE_PLAYLIST",
+      playlistId: 'plab123'
+    };
+    let removedId = UpdateOperation.removePlaylist(users, playlists, change);
+    assert.equal(removedId, 'plab123');
+
+    let expectedUser = {
+      'userab123': { 
+        id: 'userab123',
+        playlists: {}
+      }
+    }
+    assert.deepEqual(users, expectedUser)
+
+    let expectedPlaylists = {};
+    assert.deepEqual(playlists, expectedPlaylists);
+  });
+
+  it('should remove a playlist when a users has a reference to it', () => {
+    let users = {
+      'userab123': { 
+        id: 'userab123',
+        playlists: {
+          'plab123': { id: 'plab123' }
+        }
+      }
+    };
+
+    let playlists = {
+      'plab123': { 
+        id: 'plab123',
+        users: {
+          'userab123': { id: 'userab123' }
+        }
+      }
+    };
+
+    let change = {
+      operation: "REMOVE_PLAYLIST",
+      playlistId: 'plab123'
+    };
+    let removedId = UpdateOperation.removePlaylist(users, playlists, change);
+    assert.equal(removedId, 'plab123');
+
+    let expectedUser = {
+      'userab123': { 
+        id: 'userab123',
+        playlists: {}
+      }
+    }
+    assert.deepEqual(users, expectedUser)
+
+    let expectedPlaylists = {};
+    assert.deepEqual(playlists, expectedPlaylists);
+  });
 })

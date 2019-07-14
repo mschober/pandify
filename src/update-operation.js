@@ -45,13 +45,20 @@ class UpdateOperation {
     let playlist = playlists[playlistId];
 
     // remove playlist from playlists
-    delete playlists[playlist];
+    delete playlists[playlistId];
 
     // remove references to playlist from existing users
     let updateUsers = playlist.users;
-    updateUsers.forEach(user => {
+    for (let userKey in updateUsers) {
+      // TODO: if the userKey doesn't exist it needs to be handled.
+      let user = users[userKey];
+
+      // TODO: if the user backref to the playlist doesn't exit it needs to be handled.
       delete user.playlists[playlistId];
-    });
+    };
+
+    //TODO: should probably return T/F to signify success/failure instead of the incoming id.
+    return playlistId;
   }
 }
 
