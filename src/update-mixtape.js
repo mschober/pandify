@@ -15,7 +15,7 @@ function updateMixtape(input, changes, output) {
       UpdateOperation.addSong(playlists, change);
     }
     else if (change.operation === 'ADD_PLAYLIST') {
-      UpdateOperation.addPlaylist(users, change);
+      UpdateOperation.addPlaylist(users, playlists, change);
     }
     else if (change.operation === 'REMOVE_PLAYLIST') {
       UpdateOperation.removePlaylist(users, playlists, change);

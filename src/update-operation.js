@@ -10,15 +10,20 @@ class UpdateOperation {
     console.log('found pl is', playlist);
   }
 
-  static addPlaylist(user, change) {
+  static addPlaylist(users, playlists, change) {
     console.log('going to addPlaylist');
     // create playlist (change)
     let songs = change.songs;
     let userId = change.userId;
     let newPlaylist = {
-      playlistId: 'pl123',
+      id: 'plab456',
       songs: songs
     }
+    // add playlist to playlists
+    playlists.push(newPlaylist);
+    // find user
+    let user = users.filter(u => u.id === userId)[0]; // should be unique
+
     // addPlaylist to user (playlist)
     if (user.playlists) {
       user.playlists.push(newPlaylist);
@@ -26,6 +31,7 @@ class UpdateOperation {
     else {
       user.playlists = [newPlaylist]
     }
+
   }
 
   static removePlaylist(users, playlists, change) {

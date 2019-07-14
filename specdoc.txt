@@ -54,3 +54,9 @@ After you submit your code, we will evaluate it, and contact you about next step
 Thanks again for your time and we look forward to receiving your reply.
 
 The Highspot Engineering Team
+
+Lets assume:
+
+
+Questions:
+1. Are changes expected to be already validated? Or is it possible that incoming changes have incorrect song ids etc...
