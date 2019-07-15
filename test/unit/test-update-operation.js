@@ -75,9 +75,6 @@ describe('update operation tests', () => {
     // the users playlist should have an entry
     expect(Object.keys(user.playlists)).to.have.length(1);
 
-    // the users playlist should have songs from change
-    assert.deepEqual(user.playlists[newPlaylistId].songs, change.songs);
-
     // the playlists should have a new playlist
     expect(Object.keys(playlists)).to.have.length(2);
 
@@ -129,9 +126,6 @@ describe('update operation tests', () => {
 
     // the users playlist should have an entry
     expect(Object.keys(user.playlists)).to.have.length(4);
-
-    // the users playlist should have songs from change
-    assert.deepEqual(user.playlists[newPlaylistId].songs, change.songs);
 
     // the playlists should have a new playlist
     expect(Object.keys(playlists)).to.have.length(4);

@@ -35,11 +35,11 @@ class UpdateOperation {
 
     // addPlaylist to user (playlist)
     if (user.playlists) {
-      user.playlists[newPlaylist.id] = newPlaylist;
+      user.playlists[newPlaylist.id] = newPlaylist.id;
     }
     else {
       user.playlists = {};
-      user.playlists[newPlaylist.id] = newPlaylist;
+      user.playlists[newPlaylist.id] = newPlaylist.id;
     }
     return newPlaylist.id;
   }
