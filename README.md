@@ -6,6 +6,11 @@
 
 > Mixtape relies on a simple console interface to apply batches of changes to users, songs, and playlists. The program is designed to make one pass over the incoming changes and apply them.
 
+### Disclaimer
+
+- Mixtape assumes all input files are validated and will not create edge scenarios.
+- Mixtape assumes songs can only be played 1 in a a given playlist. This is considered an important fast follow update.
+
 ### Running Mixtape
 
 The pandify script assumes your system has `node` installed at `/usr/local/bin/node`. If that isn't the case, remove the shebang and runt it as `node pandify ...`.
