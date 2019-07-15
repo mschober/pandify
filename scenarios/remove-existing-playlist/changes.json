@@ -1,0 +1,6 @@
+[
+  {
+    "operation": "REMOVE_PLAYLIST",
+    "playlistId": "plab123"
+  }
+]

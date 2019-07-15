@@ -12,6 +12,7 @@ class UpdateOperation {
     console.log('playlists are', change, playlists);
     let playlist = playlists[change.playlistId];
     // add song to playlist
+    //TODO: support same song playing multiple times
     playlist.songs[change.songId] = {
       id: change.songId
     };
@@ -56,6 +57,7 @@ class UpdateOperation {
 
     // remove references to playlist from existing users
     let updateUsers = playlist.users;
+    console.log('updateUsers are', updateUsers, users);
     for (let userKey in updateUsers) {
       // TODO: if the userKey doesn't exist it needs to be handled.
       let user = users[userKey];

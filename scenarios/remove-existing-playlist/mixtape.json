@@ -1,0 +1,30 @@
+{
+  "users": {
+    "userab123": {
+      "id": "userab123",
+      "playlists": {
+        "plab123": { "id": "plab123" }
+      }
+    }
+  },
+  "songs": {
+    "abc123": {
+      "id": "abc123"
+    },
+    "songab123": {
+      "id": "songab123"
+    }
+  },
+  "playlists": {
+    "plab123": {
+      "id": "plab123",
+      "songs": {
+        "abc123": { "id": "abc123" },
+        "songab123": { "id": "songab123" }
+      },
+      "users": {
+        "userab123": { "id": "userab123" }
+      }
+    }
+  }
+}
