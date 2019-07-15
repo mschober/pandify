@@ -1,0 +1,7 @@
+[
+  {
+    "operation": "ADD_SONG",
+    "songId": "abc123",
+    "playlistId": "plab123"
+  }
+]

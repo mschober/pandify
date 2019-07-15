@@ -1,0 +1,10 @@
+[
+  {
+    "operation": "ADD_PLAYLIST",
+    "userId": "userab123",
+    "songs": [
+      "abc123",
+      "songab123"
+    ]
+  }
+]

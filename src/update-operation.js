@@ -1,9 +1,16 @@
+
+
 class UpdateOperation {
+
+  static generateKeyPrefix() {
+    return Math.round((new Date().getTime())/1000);
+  }
+
   static addSong(playlists, change) {
     // console.log('DEBUG: going to addSong');
     // find playlist
+    console.log('playlists are', change, playlists);
     let playlist = playlists[change.playlistId];
-
     // add song to playlist
     playlist.songs[change.songId] = {
       id: change.songId
@@ -17,7 +24,7 @@ class UpdateOperation {
     let songs = change.songs;
     let userId = change.userId;
     let newPlaylist = {
-      id: 'plab456',
+      id: UpdateOperation.generateKeyPrefix().toString() + 'pl',
       songs: songs,
       users: [userId]
     }

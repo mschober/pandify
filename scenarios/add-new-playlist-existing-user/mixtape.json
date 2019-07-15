@@ -1,0 +1,18 @@
+{
+  "users": {
+    "userab123": {
+      "id": "userab123",
+      "playlists": {}
+    }
+  },
+  "songs": {
+    "abc123": {
+      "id": "abc123"
+    },
+    "songab123": {
+      "id": "songab123"
+    }
+  },
+  "playlists": {
+  }
+}
